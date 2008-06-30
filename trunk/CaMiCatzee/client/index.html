@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+  		xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  		xmlns:dc="http://purl.org/dc/elements/1.1/"
+	  	xmlns:cc="http://web.resource.org/cc/"
+	  	xmlns:vc="http://www.w3.org/2001/vcard-rdf/3.0#"
+  	  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  	  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  	  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#""
+  	  >
+<head>
+	<title>CaMiCatzee</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script language="javascript" type="text/javascript" src="interface.js"></script>
+</head>
+
+<body about="http://sw.joanneum.at/CaMiCatzee/" onLoad="javascript:hideMenu();">
+
+
+<h1 property="dc:title">CaMiCatzee</h1>
+<div id="nav">
+	<a href="http://sw.joanneum.at/CaMiCatzee/" title="try again">[H]</a>
+	<a href="javascript:showExamples()" title="examples">[E]</a>
+	<a href="javascript:dumpInfo()" title="list CaMiCatzee info">[L]</a>
+	<a href="javascript:showAbout()" title="about">[A]</a>
+</div>
+
+<div id="main">
+	<div id="menu"></div>		
+	<p>
+	<span id="personRef">This is my 
+		<select id="intype" size="1" onchange="checkInSelection()">
+			<option value="FOAF">FOAF document</option>
+			<option value="myURI">URI</option>
+			<option value="myName">name</option>
+			</select>
+	</span>
+	<input class="in" type="text" size="60" id="URI" value="http://sw-app.org/mic.xhtml"/> 
+	<input id="cmiuc" class="exec" type="button" onclick="javascript:determineUserURI();" value="Catch Me If U Can!" />
+  
+  <p id="options">
+  	<input type="radio" name="qtype" value="user" /> in my photos 
+  	<input type="radio" name="qtype" value="tag" checked="checked" /> tagged with <input class="in" type="text" size="10" id="tagvalue" value="eswc2008" /> 
+  </p>
+</div>
+
+<div id="result"></div>
+</body>
+</html>
