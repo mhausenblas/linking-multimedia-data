@@ -1,0 +1,62 @@
+////////////////////////////////////////////////////////////////////
+SPARQL
+
+prefix f: <http://xmlns.com/foaf/0.1/>
+
+SELECT *  WHERE {
+  ?s f:depiction ?o .
+}
+
+
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT * FROM <http://richard.cyganiak.de/foaf.rdf> 
+WHERE {
+ ?person foaf:depiction ?personDepictionURI . 
+ ?x foaf:mail ?mail . 
+}
+
+
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT * FROM <http://sw-app.org/mic.xhtml> 
+WHERE { 
+	?p a foaf:Person; 
+		 foaf:depiction ?userDepictionURI .
+}
+
+//////////////////////////////////////////////////////////////////////////
+TESTS
+
+
+http://www.w3.org/2007/08/pyRdfa/extract?uri=http://richard.cyganiak.de/foaf.rdf
+
+flickr users:
+ + mhausenblas 7278720
+ + gromgull 82775126
+
+FOAF docs:
+
+ + XHTML+RDFa #2: http://sw-app.org/mic.xhtml eswc2008
+ + XHTML+RDFa http://www.ivan-herman.net/foaf.html
+ + RDF/XML #1: http://richard.cyganiak.de/foaf.rdf eswc2008
+ + RDF/XML #1: http://kmi.open.ac.uk/people/tom/rdf eswc2008
+ + RDF/XML #1: http://www.siegfried-handschuh.net/metadata/foaf.rdf eswc2008
+ + RDF/XML #1: http://www.w3.org/People/Berners-Lee/card www2006 -  w3c,TimBL
+ + RDF/XML #1: http://danbri.org/foaf.rdf asemantics
+
+//////////////////////////////////////////////////////////////////////////
+API calls:
+
+http://143.224.254.32/Camicatzee/sparql.php
+http://143.224.254.32/Camicatzee/service.php?reset
+http://143.224.254.32/Camicatzee/service.php?getMIMEType=http://sw-app.org/mic.xhtml
+http://143.224.254.32/Camicatzee/service.php?URI=http://sw-app.org/mic.xhtml
+http://143.224.254.32/Camicatzee/service.php?list=http://sw-app.org/mic.xhtml
+http://143.224.254.32/Camicatzee/service.php?findFOAFfromURI=http://sw-app.org/mic.xhtml%23i 
+http://143.224.254.32/Camicatzee/service.php?photo=416735785
+http://143.224.254.32/Camicatzee/service.php?user=michael.hausenblas@joanneum.at
+http://143.224.254.32/Camicatzee/service.php?personURI4Mail=michael.hausenblas@joanneum.at
+http://143.224.254.32/Camicatzee/service.php?photos4user=michael.hausenblas@joanneum.at
+http://143.224.254.32/Camicatzee/service.php?photos4tag=eswc2008
+http://143.224.254.32/Camicatzee/service.php?match=416735785&personURI=http://sw-app.org/mic.xhtml%23i
+http://143.224.254.32/Camicatzee/service.php?match=2565838584&personURI=http://sw-app.org/mic.xhtml%23i
