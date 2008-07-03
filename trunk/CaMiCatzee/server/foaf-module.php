@@ -145,14 +145,13 @@ function reportOnUser($URI) {
 	$r .= "<div about=\"$personURI\" style=\"text-align:center;\">\n";
 	$r .= "<h2>About <a href=\"$personURI\">$personURI</a> I have the following information</h2>\n";
 	if($rows = $store->query($q, 'rows')) { 
-		foreach ($rows as $row) {
-			
+		foreach ($rows as $row) {			
 			$f = $row['f'];
 			if(!in_array($f, $dDone)) {
 				$pattern = "/[0-9]+/";
 				preg_match($pattern, $f, $matches);
 				$fImg = getFlickrPhotoThumbnail($matches[0]);
-				$URI4Tags = lookupTagsInSdindice($matches[0]);
+				$URI4Tags = lookupTagsInSindice($matches[0]);
 				$r .= "<div style=\"border: 1px dotted #f0f0f0; padding: 20px; margin: 20px 300px 10px 300px\" about=\"$f\">\n";
 				$r .= "<h3 property=\"dc:title\">" . getTitleOfDepiction($URI, $f) . "</h3>";
 				$r .= "<div>in <a href=\"$f\">$f</a> \n</div>";			

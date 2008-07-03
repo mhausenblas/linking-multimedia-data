@@ -140,7 +140,7 @@ function extractPersonURIFromFlickrPhoto($photoID){
 	$notes = getFlickrNote($photoID);
 	if($DO_DEBUG) var_dump($notes);
 	
-	for($i=0;$i<=sizeof($notes);$i++){
+	for($i=0;$i<=sizeof($notes)-1;$i++){
 		$note = $notes["note"][$i]["_content"];
 	
 		if(substr($note, 0, 7) == 'http://') { // is a potential HTTP URI
@@ -274,5 +274,38 @@ function getFlickrPhotoThumbnail($photoID) {
 	
 	return $r;
 }
+
+
+// photoID- > medium URI of photo
+function getFlickrPhotoMedium($photoID) {
+	global $DO_DEBUG;
+	
+  if($DO_DEBUG) echo "looking up medium size of photo $photoID";
+  
+	$params = array(
+		'api_key'	=> '15f7d2ebd66e51d4868ef31536e61851',
+		'method'	=> 'flickr.photos.getSizes',
+		'photo_id'	=> $photoID,
+		'format'	=> 'php_serial',
+	);
+
+	$encoded_params = array();
+	foreach ($params as $k => $v){
+		$encoded_params[] = urlencode($k).'='.urlencode($v);
+	}
+	$url = "http://api.flickr.com/services/rest/?".implode('&', $encoded_params);
+	$rsp = file_get_contents($url);
+	$rsp_obj = unserialize($rsp);
+	if ($rsp_obj['stat'] == 'ok'){
+		$r = $rsp_obj['sizes']['size'][3]['source'];		
+	}
+	else{
+		echo "flickr API call failed!";
+	}
+	
+	return $r;
+}
+
+
 	
 ?>

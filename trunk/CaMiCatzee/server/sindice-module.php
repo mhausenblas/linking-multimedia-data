@@ -67,7 +67,7 @@ function lookupNameInSindice($name){
 }
 
 // reads tags of photo with photoID and returns list of URIs from sindice.com
-function lookupTagsInSdindice($photoID){
+function lookupTagsInSindice($photoID){
 	global $DO_DEBUG;
 	
 	$r = array();
