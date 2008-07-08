@@ -364,13 +364,28 @@ function updateMenu(){
 	else hideMenu();	
 }
 
+function showWelcome(){	
+	
+	var buffer =  "<p>\"Catch Me If You Can\" (CaMiCatzee) is a multimedia interlinking concept demonstrator. The main goal is to show how multimedia assets, such as still images, can be interlinked. We use <a href=\"http://flickr.com\">flickr</a> as a base for the User Contributed Interlinking of the still images. This demonstrator is powered by <a href=\"http://www.foaf-project.org\">FOAF</a>, <a href=\"http://arc.semsol.org\">ARC2</a>, and <a href=\"http://sindice.com\">Sindice</a>.</p>";
+	buffer = buffer + "<p>For the start you maybe want to have a look at some examples:</p><ul>";
+	buffer = buffer + "<li><a href=\"javascript:setTagExample('http://www.w3.org/People/Berners-Lee/card','TimBL, W3C')\">Tim Berners-Lee</a></li>";	
+	buffer = buffer + "<li><a href=\"javascript:setTagExample('http://danbri.org/foaf.rdf','asemantics')\">Dan Brickley</a></li>";
+ 	buffer = buffer + "<li><a href=\"javascript:setTagExample('http://richard.cyganiak.de/foaf.rdf','eswc2008')\">Richard Cyganiak</a></li>";
+ 	buffer = buffer + "<li><a href=\"javascript:setTagExample('http://kmi.open.ac.uk/people/tom/rdf','eswc2008')\">Tom Heath</a></li>";
+ 	buffer = buffer + "<li><a href=\"javascript:setTagExample('http://www.siegfried-handschuh.net/metadata/foaf.rdf','eswc2008')\">Sigi Handschuh</a></li>";
+ 	buffer = buffer + "<li><a href=\"javascript:setTagExample('http://sw-app.org/mic.xhtml','eswc2008')\">Michael Hausenblas</a></li>";
+ 	buffer = buffer + "</ul>";
+	document.getElementById('menu').innerHTML = buffer;
+	updateMenu();		
+}
+
 function showAbout(){	
-	document.getElementById('menu').innerHTML = "<p>\"Catch Me If You Can\" (CaMiCatzee) is a multimedia interlinking concept demonstrator. The main goal is to show how multimedia assets, such as still images, can be interlinked. We use <a href=\"http://flickr.com\">flickr</a> as a base for the User Contributed Interlinking of the still images. This demonstrator is powered by <a href=\"http://www.foaf-project.org\">FOAF</a>, <a href=\"http://arc.semsol.org\">ARC2</a>, and <a href=\"http://sindice.com\">Sindice</a>.</p>";
+	document.getElementById('menu').innerHTML = "<p>\"Catch Me If You Can\" (CaMiCatzee) is a multimedia interlinking concept demonstrator. The main goal is to show how multimedia assets, such as still images, can be interlinked. We use <a href=\"http://flickr.com\">flickr</a> as a base for the User Contributed Interlinking of the still images. This demonstrator is powered by <a href=\"http://www.foaf-project.org\">FOAF</a>, <a href=\"http://arc.semsol.org\">ARC2</a>, and <a href=\"http://sindice.com\">Sindice</a>.<br /><br /><a href=\"about.html\">Read more ...</a></p>";
 	updateMenu();
 }
 
 function showExamples(){	
-	var buffer = "<p>Some examples using already interlinked still images on flickr:</p><ul>";
+	var buffer = "<p>Some examples already using interlinked still images on flickr:</p><ul>";
 	buffer = buffer + "<li><a href=\"javascript:setTagExample('http://www.w3.org/People/Berners-Lee/card','TimBL, W3C')\">Tim Berners-Lee</a></li>";	
 	buffer = buffer + "<li><a href=\"javascript:setTagExample('http://danbri.org/foaf.rdf','asemantics')\">Dan Brickley</a></li>";
  	buffer = buffer + "<li><a href=\"javascript:setTagExample('http://richard.cyganiak.de/foaf.rdf','eswc2008')\">Richard Cyganiak</a></li>";

@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+  		xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  		xmlns:dc="http://purl.org/dc/elements/1.1/"
+	  	xmlns:cc="http://web.resource.org/cc/"
+	  	xmlns:vc="http://www.w3.org/2001/vcard-rdf/3.0#"
+  	  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  	  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  	  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#""
+  	  >
+<head>
+	<title>About CaMiCatzee</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body about="http://sw.joanneum.at/CaMiCatzee/">
+
+
+<h1 property="dc:title">CaMiCatzee</h1>
+<div id="nav">
+	<a href="http://sw.joanneum.at/CaMiCatzee/" title="home">[H]</a>
+</div>
+
+<div id="main">
+	
+	<p style="padding:60px 200px 20px 200px; text-align:justify;">
+	"Catch Me If You Can" (CaMiCatzee) is a multimedia interlinking concept demonstrator. Our main goal is to show how multimedia assets (in our case still images) can be <a href="http://linkeddata.org/">interlinked</a> on the Web of Data.
+	We envision to extend the <a href="http://sw-app.org/pub/eswc08-irs-poster.pdf">User Contributed Interlinking</a> (UCI) to multimedia assets. Clearly, the advantage is having high-quality semantic links
+  from a multimedia asset to other data, hence allowing to connect to the linked datasets.	
+  </p>
+  <p style="padding:0px 200px 20px 200px; text-align:justify;">
+  In <a href="http://flickr.com">flickr</a> it is possible to annotate parts of a picture using so called "notes" (see also <a href="http://www.flickr.com/services/api/">flickr's API</a>).
+  As the primary domain, we chose people depictions of people. Typically, flickr notes contain a string stating, e.g., "person X is depicted in this picture". However, there is no
+  straight-forward way to relate this information with other data, such as <a href="http://xmlns.com/foaf/spec/">FOAF</a> data, locations, and contextual information (conference, holiday, etc.). 
+  This is where CaMiCatzee steps in: we apply the UCI principle by harnessing the fine-grained annotation capabilities of flickr in order to let people semantically annotate pictures.
+  </p>  
+  <div>
+  <img src="camikatzee-arch_small.png" />
+  <p style="padding:10px 300px 20px 300px; text-align:center;">
+  CaMiCatzee's system architecture, showing the server as well as the client.
+  </p> 
+  </div>
+  <p style="padding:0px 200px 20px 200px; text-align:justify;">
+  But CaMiCatzee offers more than pure interlinking: In the "full report", the flickr tags of a picture are evaluated and used as a base for introducing rdfs:seeAlso links.
+  This overview report is offered in <a href="http://www.w3.org/TR/xhtml-rdfa-primer/">XHTML+RDFa</a> allowing consumption by both humans and machines.
+  </p>
+  <p style="padding:0px 200px 20px 200px; text-align:justify;">
+  This demonstrator is powered by <a href="http://www.foaf-project.org">FOAF</a>, <a href="http://arc.semsol.org">ARC2</a>, and <a href="http://sindice.com">sindice</a> semantic indexer;
+  we would like to thank the people involved in building these technologies.
+  </p>
+  
+  
+</div>
+
+</body>
+</html>
